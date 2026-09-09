@@ -1,10 +1,12 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        seen ={}
-
+        seen = {}
         for i, num in enumerate(nums):
-            compliment = target-num
-            if compliment in seen:
-                return [seen[compliment],i]
+            needed = target-num
+            if needed in seen:
+                return [seen[needed],i]
+            else:
+                seen[num]=i
+        return []
 
-            seen[num]=i
+        
